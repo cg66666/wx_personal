@@ -1,28 +1,117 @@
 <!--index.wxml-->
-<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
-<scroll-view class="scrollarea" scroll-y type="list">
-  <view class="container">
-    <view class="userinfo">
-      <block wx:if="{{canIUseNicknameComp && !hasUserInfo}}">
-        <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-          <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
-        </button>
-        <view class="nickname-wrapper">
-          <text class="nickname-label">昵称</text>
-          <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange" />
+<view class="index-page">
+  <navigation-bar background="#ffe233" isSlot="{{true}}">
+    <view class="headerContent">
+      <view class="region" style="margin-left: {{titleLeft}}px;"
+        >北京<text class="iconfont icon-Down head-icon"
+      /></view>
+      <view class="searchContainer" bindtap="navigateToSearchPage">
+        <text class="iconfont icon-Search search-icon" />
+        <view class="swiperContainer">
+          <view class="{{headSwiperList[0]}}">田野家</view>
+          <view class="{{headSwiperList[1]}}">蜜雪冰城</view>
+          <view class="{{headSwiperList[2]}}">瑞星咖啡</view>
+          <view class="{{headSwiperList[3]}}">麦当劳</view>
+          <view class="{{headSwiperList[4]}}">肯德基</view>
         </view>
-      </block>
-      <block wx:elif="{{!hasUserInfo}}">
-        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-        <view wx:else> 请使用2.10.4及以上版本基础库 </view>
-      </block>
-      <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
+      </view>
     </view>
-    <view class="usermotto">
-      <text class="user-motto">{{motto}}</text>
+  </navigation-bar>
+  <scroll-view
+    class="scrollarea"
+    scroll-y
+    bindscrolltolower="bindscrolltolower"
+    lower-threshold="100"
+    bindscroll="onScroll"
+    scroll-top="{{topNum}}"
+    scroll-with-animation
+  >
+    <view class="swiper-container">
+      <swiper>
+        <swiper-item wx:for="{{menuList}}" wx:for-item="item" wx:key="index">
+          <view wx:for="{{item}}" wx:for-item="item2" wx:key="index">
+            <view class="{{'iconfont swiper_icon ' + item2.icon_name}}" />
+            <view class="swiper_label">{{item2.label}}</view>
+          </view>
+        </swiper-item>
+      </swiper>
     </view>
-  </view>
-</scroll-view>
+    <view class="container">
+      <view class="leftContent">
+        <!-- 特价团 -->
+        <view class="special_offer">
+          <view class="special_offer_banner">特价团 <text>爆款热抢中</text></view>
+          <lazy-image src="https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg" />
+          <!-- <image src="https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg" mode="aspectFill" /> -->
+          <view class="special_offer_title">华莱士·全鸡汉堡 劲脆鲜虾堡（不辣）</view>
+          <view class="special_offer_price">
+            <text class="discountPrice"><text class="unit">￥</text>6.71</text>
+            <text class="originPrice">￥13</text>
+            <text class="priceDesc">5.2折</text>
+          </view>
+        </view>
+        <block wx:for="{{leftList}}" wx:for-item="item" wx:key="index">
+          <white-card
+            img="{{item.img}}"
+            title="{{item.title}}"
+            subTitle="{{item.subTitle}}"
+            discountPrice="{{item.discountPrice}}"
+            originPrice="{{item.originPrice}}"
+            priceDesc="{{item.priceDesc}}"
+          />
+        </block>
+      </view>
+      <view class="rightContent">
+        <!-- 限时抢 -->
+        <view class="timeLimit">
+          <view class="timeLimit_head">
+            <text class="left">限时抢</text>
+            <text class="verticalLine"></text>
+            <text class="countDown"
+              >距结束 {{timeCountDownObj.Hour + ':' + timeCountDownObj.Minute + ':' + timeCountDownObj.Second}}</text
+            >
+          </view>
+          <view class="timeLimit_content">
+            <image
+              src="https://img.zcool.cn/community/0105ec5b5ac3cba801206a35cf08a8.jpg@1280w_1l_2o_100sh.jpg"
+              mode="aspectFill"
+            />
+            <view>
+              <view class="title">【新店福利】单人份网红波波杯（可自取/可随蛋糕配送）</view>
+              <view class="desc">直降11元</view>
+              <view class="priceContent">
+                <text class="discountPrice"><text class="unit">￥</text>6</text>
+                <text class="originPrice">￥13</text>
+              </view>
+            </view>
+          </view>
+          <view class="timeLimit_content">
+            <image
+              src="https://img.zcool.cn/community/0105ec5b5ac3cba801206a35cf08a8.jpg@1280w_1l_2o_100sh.jpg"
+              mode="aspectFill"
+            />
+            <view>
+              <view class="title">西北拉条子1份</view>
+              <view class="desc">直降12元</view>
+              <view class="priceContent">
+                <text class="discountPrice"><text class="unit">￥</text>8</text>
+                <text class="originPrice">￥20</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <block wx:for="{{rightList}}" wx:for-item="item" wx:key="index">
+          <white-card
+            img="{{item.img}}"
+            title="{{item.title}}"
+            subTitle="{{item.subTitle}}"
+            discountPrice="{{item.discountPrice}}"
+            originPrice="{{item.originPrice}}"
+            priceDesc="{{item.priceDesc}}"
+          />
+        </block>
+      </view>
+      <view wx:if="{{isLoading}}" class="isLoading">努力加载中…</view>
+    </view>
+  </scroll-view>
+</view>

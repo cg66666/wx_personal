@@ -3,7 +3,7 @@
  * @Author: 朱晨光
  * @Date: 2024-07-16 23:22:48
  * @LastEditors: 朱晨光
- * @LastEditTime: 2024-08-09 15:48:44
+ * @LastEditTime: 2024-07-17 00:40:49
  */
 import { formatTime } from '../../utils/index';
 const app = getApp();
@@ -77,7 +77,6 @@ const addRightList = [
 ];
 Page({
   data: {
-    topNum: 0,
     titleLeft: 0,
     headSwiperList: ['firstView', 'secondView', 'thirdShowView', 'forthView', 'fifthView'],
     menuList: [
@@ -333,13 +332,9 @@ Page({
         priceDesc: '30天惊爆价',
       },
     ],
-    isScroll: false,
   },
-
-  navigateToSearchPage() {
-    wx.navigateTo({
-      url: '/pages/search/search',
-    });
+  navigateToSearchPage(e) {
+    console.log('触发跳转搜索页事件！', e.detail);
   },
   // 接近触底监听
   bindscrolltolower() {
@@ -353,32 +348,10 @@ Page({
         leftList: [...this.data.leftList, ...addLeftList],
         rightList: [...this.data.rightList, ...addRightList],
       });
-    }, 600);
-  },
-  onScroll: function (e) {
-    if (e.detail.scrollTop > 200) {
-      this.setData({
-        isScroll: true,
-      });
-      this.getTabBar().setData({
-        isScroll: true,
-      });
-    } else {
-      this.setData({
-        isScroll: false,
-      });
-      this.getTabBar().setData({
-        isScroll: false,
-      });
-    }
-  },
-  scrollToTop: function () {
-    if (!this.data.isScroll) return;
-    this.setData({
-      topNum: 0,
-    });
+    }, 800);
   },
   onLoad() {
+    console.log('看下此时的app111', app);
     this.setData({
       titleLeft: app.globalData.rectRight,
     });
@@ -412,50 +385,14 @@ Page({
     }, 250);
   },
   onShow() {
-    console.log('onShow');
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({
-        selected: 0,
-        inIndexPage: true,
-        toPageTop: this.scrollToTop,
+        selected: 3,
+        inIndexPage: false,
       });
     }
-    // // 头部轮播图事件
-    // this.headSwiperTimer = setInterval(() => {
-    //   const headSwiperList = [...this.data.headSwiperList]
-    //   var midClassName = headSwiperList.shift();
-    //   headSwiperList.push(midClassName)
-    //   this.setData({
-    //     headSwiperList
-    //   })
-    // }, 5000)
-
-    // // 倒计时
-    // const endTime = new Date().getTime() + 21216923
-    // this.timeCountDownTimer = setInterval(() => {
-    //   const diffTime = endTime - new Date().getTime()
-    //   if (diffTime > 0) {
-    //     const dataObj = formatTime(diffTime)
-    //     this.setData({
-    //       timeCountDownObj: {
-    //         Day: dataObj.Day,
-    //         Hour: dataObj.Hour,
-    //         Minute: dataObj.Minute,
-    //         Second: dataObj.Second,
-    //       }
-    //     })
-    //   } else {
-    //     clearInterval(this.timeCountDownTimer)
-    //   }
-    // }, 250)
-  },
-  onHide() {
-    // console.log('onHide');
-    // clearInterval(this.headSwiperTimer)
-    // clearInterval(this.timeCountDownTimer)
   },
   onUnload() {
-    console.log('onUnload');
     clearInterval(this.headSwiperTimer);
     clearInterval(this.timeCountDownTimer);
   },

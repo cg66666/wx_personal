@@ -1,0 +1,57 @@
+/* components/white-card.wxss */
+.whieCardContainer {
+  width: 340rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin: 25rpx 17.5rpx;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  & > image {
+    height: 350rpx;
+    width: 350rpx;
+  }
+
+  .content {
+    padding: 0rpx 10rpx 20rpx 10rpx;
+
+    .title {
+      font-size: 28rpx;
+    }
+
+    .subTitle {
+      font-size: 20rpx;
+      color: #7f7f7f;
+      margin: 5rpx 0 15rpx;
+    }
+
+    .price {
+      .discountPrice {
+        color: #f73000;
+        font-size: 38rpx;
+
+        .unit {
+          font-size: 23rpx;
+        }
+      }
+
+      .originPrice {
+        color: #7a7a7a;
+        font-size: 18rpx;
+        text-decoration: line-through;
+      }
+
+      .priceDesc {
+        box-sizing: border-box;
+        border: 1px solid #fcb7a6;
+        color: #f73000;
+        padding: 5rpx 7rpx;
+        font-size: 18rpx;
+        border-radius: 6rpx;
+        position: relative;
+        top: -5.5rpx;
+        left: 10rpx;
+      }
+    }
+  }
+}

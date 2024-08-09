@@ -1,0 +1,7 @@
+<image wx:if="{{showImage}}" src="{{imageSrc}}" mode="aspectFill" class="image"></image>
+<image
+  wx:else
+  src="https://img.tukuppt.com/png_preview/00/07/99/ciZdUefqzm.jpg!/fw/780"
+  mode="aspectFill"
+  class="image"
+></image>

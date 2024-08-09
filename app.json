@@ -1,11 +1,37 @@
 {
-  "pages": ["pages/index/index", "pages/logs/logs"],
+  "pages": [
+    "pages/index/index",
+    "pages/index2/index",
+    "pages/index3/index",
+    "pages/index4/index",
+    "pages/search/search"
+  ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index2/index",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/index3/index",
+        "text": "省钱"
+      },
+      {
+        "pagePath": "pages/index4/index",
+        "text": "我的"
+      }
+    ]
+  },
   "style": "v2",
-  "renderer": "skyline",
   "rendererOptions": {
     "skyline": {
       "defaultDisplayBlock": true,
@@ -16,5 +42,9 @@
   },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+    "lazy-image": "/components/global/lazy-image/lazy-image",
+    "navigation-bar": "/components/global/navigation-bar/navigation-bar"
+  }
 }

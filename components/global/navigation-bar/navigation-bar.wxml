@@ -1,0 +1,16 @@
+<view class="weui-navigation-bar {{extClass}}">
+  <view
+    class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}"
+    style="color: {{color}}; background: {{background}}; {{displayStyle}}; {{innerPaddingRight}}; {{safeAreaTop}}"
+  >
+    <block wx:if="{{showBack}}">
+      <view class="iconfont icon-fenxiang back" bind:tap="backPage"></view>
+    </block>
+    <block wx:if="{{title}}">
+      <view class="barTitle" style="{{titleMarginLeft}}">{{title}}</view>
+    </block>
+    <block wx:if="{{isSlot}}">
+      <slot></slot>
+    </block>
+  </view>
+</view>
