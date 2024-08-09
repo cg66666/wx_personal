@@ -1,0 +1,90 @@
+/**app.wxss**/
+@import 'font/iconfont.less';
+
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  background: white;
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+
+  & > view {
+    flex: 1;
+  }
+
+  .inIndexPageContainer {
+    position: relative;
+
+    .icon-text {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) translateY(35rpx);
+      transition: 0.1s;
+      font-weight: bold;
+      font-size: 28rpx;
+      opacity: 1;
+    }
+
+    .hidden-text {
+      transform: translateX(-50%) translateY(-5rpx);
+      opacity: 0;
+    }
+
+    .iconHome {
+      position: absolute;
+      font-size: 50rpx;
+      left: 50%;
+      transform: translateX(-50%) translateY(56rpx);
+      transition: 0.1s;
+      opacity: 0;
+    }
+
+    .show-icon {
+      opacity: 1;
+      transform: translateX(-50%) translateY(28rpx);
+    }
+
+    .inIndexPage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 86rpx;
+      height: 86rpx;
+      text-align: center;
+      border-radius: 50%;
+      background-color: #ffe12c;
+      font-weight: bold;
+    }
+  }
+}
+
+.tab-bar-border {
+  background-color: rgba(0, 0, 0, 0.33);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  transform: scaleY(0.5);
+}
+
+.tab-bar-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tab-bar-item .icon_item {
+  font-size: 50rpx;
+}
+
+.tab-bar-item view {
+  font-size: 10px;
+}

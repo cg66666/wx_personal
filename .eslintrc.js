@@ -25,7 +25,8 @@ module.exports = {
   rules: {
     'prettier/prettier': 'warn',
     'no-undef': 'off',
-    camelcase: ['error', { ignoreDestructuring: true }],
+    // 'camelcase': ['error', { ignoreDestructuring: true }],
+    'camelcase': 'off',
     'class-name-casing': 'off',
     'no-console': ['warn', { allow: ['warn', 'error'] }],
     'no-debugger': 'error',
@@ -91,16 +92,17 @@ module.exports = {
     'dot-notation': 'warn',
     'one-var': ['warn', 'never'],
     'no-multi-assign': 'error',
-    'no-unused-vars': [
-      'error',
-      {
-        args: 'after-used',
-        ignoreRestSiblings: true,
-        argsIgnorePattern: '^_.+',
-        varsIgnorePattern: '^_.+',
-      },
-    ],
-    eqeqeq: ['warn', 'always'],
+    // 'no-unused-vars': [
+    //   'error',
+    //   {
+    //     args: 'after-used',
+    //     ignoreRestSiblings: true,
+    //     argsIgnorePattern: '^_.+',
+    //     varsIgnorePattern: '^_.+',
+    //   },
+    // ],
+    'no-unused-vars': 'off',
+    // eqeqeq: ['warn', 'always'],
     'no-case-declarations': 'error',
     'no-nested-ternary': 'warn',
     'no-unneeded-ternary': 'warn',

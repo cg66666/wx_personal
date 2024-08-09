@@ -1,0 +1,33 @@
+<!--pages/search/search.wxml-->
+<view class="search-page">
+  <navigation-bar background="white" showBack="{{true}}" isSlot="{{true}}">
+    <view class="headContainer">
+      <view class="searchContainer">
+        <input type="text" placeholder="英嘉国际影城" bindinput="inputHandler" value="{{inputVal}}" />
+        <view wx:if="{{showClearBtn}}" class="iconfont icon-qingkong clearIcon" bind:tap="clearInputVal" />
+        <button bind:tap="toSearch">搜索</button>
+      </view>
+    </view>
+  </navigation-bar>
+  <view class="search-page-content">
+    <view class="historyContent">
+      <view class="iconfont icon-shanchu deleteIcon" />
+      <view class="title">历史搜索</view>
+      <view class="flexContent"></view>
+    </view>
+    <view class="recommendContent">
+      <view class="title">猜你想搜</view>
+      <view class="flexContent">
+        <view>岩小石韩式炸鸡</view>
+        <view>英嘉国际影城</view>
+        <view>芈重山老火锅</view>
+        <view>39元自主骨头火锅</view>
+        <view>二三九品手工水饺自助</view>
+        <view>星怡会</view>
+        <view>文昌桥螺狮粉</view>
+        <view>农小锅</view>
+        <view>一屋之煮麻辣烫</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<!--components/white-card.wxml-->
+<view class="whieCardContainer">
+  <!-- <image src="{{img}}" mode="aspectFill" /> -->
+  <lazy-image src="{{img}}" />
+  <view class="content">
+    <view class="title">{{title}}</view>
+    <view class="subTitle">{{subTitle}}</view>
+    <view class="price">
+      <text class="discountPrice"><text class="unit">￥</text>{{discountPrice}}</text>
+      <text class="originPrice" wx:if="{{originPrice}}">￥{{originPrice}}</text>
+      <text class="priceDesc" wx:if="{{priceDesc}}">{{priceDesc}}</text>
+    </view>
+    <view class="bottomLink" wx:if="{{bottomLink}}"> <image src="{{img}}" mode="" />{{bottomLink}} </view>
+  </view>
+</view>

@@ -18,7 +18,10 @@
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
-    }
+    },
+    "useCompilerPlugins": [
+      "less"
+    ]
   },
   "condition": {},
   "editorSetting": {
