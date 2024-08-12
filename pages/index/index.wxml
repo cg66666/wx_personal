@@ -25,6 +25,8 @@
     bindscroll="onScroll"
     scroll-top="{{topNum}}"
     scroll-with-animation
+    show-scrollbar="{{false}}"
+    enhanced="{{true}}"
   >
     <view class="swiper-container">
       <swiper>
@@ -39,10 +41,12 @@
     <view class="container">
       <view class="leftContent">
         <!-- 特价团 -->
-        <view class="special_offer">
+        <view class="special_offer" data-val="{{item.title}}" bind:tap="toDetail">
           <view class="special_offer_banner">特价团 <text>爆款热抢中</text></view>
-          <lazy-image src="https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg" />
-          <!-- <image src="https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg" mode="aspectFill" /> -->
+          <lazy-image
+            src="https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg"
+            extendClass="innerImage"
+          />
           <view class="special_offer_title">华莱士·全鸡汉堡 劲脆鲜虾堡（不辣）</view>
           <view class="special_offer_price">
             <text class="discountPrice"><text class="unit">￥</text>6.71</text>
@@ -58,6 +62,8 @@
             discountPrice="{{item.discountPrice}}"
             originPrice="{{item.originPrice}}"
             priceDesc="{{item.priceDesc}}"
+            data-val="{{item.title}}"
+            bind:tap="toDetail"
           />
         </block>
       </view>
@@ -71,7 +77,11 @@
               >距结束 {{timeCountDownObj.Hour + ':' + timeCountDownObj.Minute + ':' + timeCountDownObj.Second}}</text
             >
           </view>
-          <view class="timeLimit_content">
+          <view
+            class="timeLimit_content"
+            data-val="【新店福利】单人份网红波波杯（可自取/可随蛋糕配送）"
+            bind:tap="toDetail"
+          >
             <image
               src="https://img.zcool.cn/community/0105ec5b5ac3cba801206a35cf08a8.jpg@1280w_1l_2o_100sh.jpg"
               mode="aspectFill"
@@ -85,7 +95,7 @@
               </view>
             </view>
           </view>
-          <view class="timeLimit_content">
+          <view class="timeLimit_content" data-val="西北拉条子1份" bind:tap="toDetail">
             <image
               src="https://img.zcool.cn/community/0105ec5b5ac3cba801206a35cf08a8.jpg@1280w_1l_2o_100sh.jpg"
               mode="aspectFill"
@@ -108,6 +118,8 @@
             discountPrice="{{item.discountPrice}}"
             originPrice="{{item.originPrice}}"
             priceDesc="{{item.priceDesc}}"
+            data-val="{{item.title}}"
+            bind:tap="toDetail"
           />
         </block>
       </view>

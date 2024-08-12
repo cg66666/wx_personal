@@ -6,6 +6,8 @@
  * @LastEditTime: 2024-08-09 15:50:10
  */
 // pages/search/search.js
+import { debounce } from '../../utils/index';
+
 Page({
   /**
    * 页面的初始数据
@@ -13,29 +15,113 @@ Page({
   data: {
     inputVal: '',
     showClearBtn: false,
+    searchValList: [],
+    defaultValue: '英嘉国际影城',
+    showSearchTips: false,
+    searchTipsList: [
+      '汉堡王',
+      '华莱士汉堡',
+      '汉堡外卖',
+      '塔斯汀汉堡',
+      '外卖 汉堡王',
+      '肯德基汉堡',
+      '汉堡王(北京路店)',
+      '外卖 华莱士全鸡汉堡(北京城市店)',
+      '外卖 牛约堡-手作牛肉汉堡(大学店)',
+      '汉堡王(大厦店)',
+      '麦当劳(花园店)',
+    ],
+    recommendList: [
+      '岩小石韩式炸鸡',
+      '英嘉国际影城',
+      '芈重山老火锅',
+      '39元自主骨头火锅',
+      '二三九品手工水饺自助',
+      '星怡会',
+      '文昌桥螺狮粉',
+      '农小锅',
+      '一屋之煮麻辣烫',
+    ],
+  },
+  observers: {
+    inputVal: function (val) {
+      console.log('这是监听的内容', val);
+    },
   },
   // 清空输入框
   clearInputVal() {
     this.setData({
       inputVal: '',
       showClearBtn: false,
+      showSearchTips: false,
     });
   },
   // 输入框改变
   inputHandler(e) {
     // 获取输入框的值
     var { value } = e.detail;
-    console.log(value); // 在控制台输出当前输入框的值
-    // 可以在这里对value进行进一步的处理或数据绑定
-    let showClearBtn = false;
-    if (value) {
-      showClearBtn = true;
-    } else {
-      showClearBtn = false;
+    if (!value) this.clearInputVal();
+    else {
+      this.setData({
+        inputVal: value,
+        showClearBtn: !!value,
+      });
+      this.searchTips();
     }
+  },
+  // 搜索
+  toSearch() {
+    let { inputVal } = this.data;
+    const { defaultValue } = this.data;
+    const searchValList = wx.getStorageSync('searchValList') || [];
+    if (!inputVal.trim()) inputVal = defaultValue;
+    const index = searchValList.indexOf(inputVal);
+    if (index >= 0) {
+      searchValList.splice(index, 1);
+    }
+    searchValList.unshift(inputVal);
+    if (searchValList.length > 10) {
+      searchValList.length = 10;
+    }
+    wx.navigateTo({
+      url: `/pages/detail/detail?searchVal=${inputVal}`,
+    });
     this.setData({
-      inputVal: value,
-      showClearBtn,
+      searchValList,
+    });
+    wx.setStorageSync('searchValList', searchValList);
+  },
+  // 清空历史记录
+  clearHistoryList() {
+    wx.setStorageSync('searchValList', []);
+    this.setData({
+      searchValList: [],
+    });
+  },
+  // 搜索提示内容展示
+  searchTips: debounce(function () {
+    const { inputVal } = this.data;
+    if (!inputVal) return;
+    this.setData({
+      showSearchTips: true,
+    });
+  }, 500),
+  // 前往详情页
+  toDetail(e) {
+    wx.navigateTo({
+      url: `/pages/detail/detail?searchVal=${e.currentTarget.dataset.val}`,
+    });
+    this.setData({
+      inputVal: e.currentTarget.dataset.val,
+      showClearBtn: true,
+    });
+    this.toSearch();
+    this.searchTips();
+  },
+  onLoad() {
+    const searchValList = wx.getStorageSync('searchValList') || [];
+    this.setData({
+      searchValList,
     });
   },
 });

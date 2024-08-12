@@ -1,7 +1,7 @@
 <!--components/white-card.wxml-->
 <view class="whieCardContainer">
   <!-- <image src="{{img}}" mode="aspectFill" /> -->
-  <lazy-image src="{{img}}" />
+  <lazy-image src="{{img}}" extendClass="innerImage" />
   <view class="content">
     <view class="title">{{title}}</view>
     <view class="subTitle">{{subTitle}}</view>

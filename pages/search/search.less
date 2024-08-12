@@ -1,5 +1,9 @@
 /* pages/search/search.wxss */
 .search-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
   .headContainer {
     margin-left: 90rpx;
     height: 100%;
@@ -67,6 +71,12 @@
       }
     }
 
+    .twoLine {
+      max-height: 140rpx;
+      overflow: hidden;
+      margin-bottom: 25rpx;
+    }
+
     .flexContent {
       display: flex;
       flex-wrap: wrap;
@@ -78,6 +88,29 @@
         padding: 6px 8px;
         font-size: 12px;
         margin: 0 10px 10px 0;
+      }
+    }
+  }
+
+  .searchTips {
+    flex: 1;
+    overflow-y: hidden;
+
+    .item {
+      display: flex;
+      padding: 20rpx 0;
+      margin: 0 30rpx;
+      border-bottom: 2rpx solid #eeeeee;
+
+      .icon {
+        font-size: 35rpx;
+        position: relative;
+        top: 8rpx;
+      }
+
+      .text {
+        font-size: 32rpx;
+        margin-left: 20rpx;
       }
     }
   }

@@ -37,6 +37,10 @@ Component({
     showBack: {
       type: Boolean,
     },
+    // 返回的地址，不传默认返回上一级路由
+    // backUrl: {
+    //   type: String
+    // }
   },
   /**
    * 组件的初始数据
@@ -90,7 +94,19 @@ Component({
       });
     },
     backPage() {
-      // console.log('返回！');
+      // console.log(111, this.properties);
+      // const {
+      //   backUrl
+      // } = this.properties
+      // if (backUrl) {
+      //   wx.redirectTo({
+      //     url: backUrl,
+      //   })
+      // } else {
+      //   wx.navigateBack({
+      //     delta: 1,
+      //   });
+      // }
       wx.navigateBack({
         delta: 1,
       });

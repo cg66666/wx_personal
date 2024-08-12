@@ -335,7 +335,7 @@ Page({
     ],
     isScroll: false,
   },
-
+  // 前往搜索页
   navigateToSearchPage() {
     wx.navigateTo({
       url: '/pages/search/search',
@@ -355,6 +355,7 @@ Page({
       });
     }, 600);
   },
+  // 滚动行为
   onScroll: function (e) {
     if (e.detail.scrollTop > 200) {
       this.setData({
@@ -372,10 +373,17 @@ Page({
       });
     }
   },
+  // 滚回头部
   scrollToTop: function () {
     if (!this.data.isScroll) return;
     this.setData({
       topNum: 0,
+    });
+  },
+  // 前往详情页
+  toDetail(e) {
+    wx.navigateTo({
+      url: `/pages/detail/detail?searchVal=${e.currentTarget.dataset.val}`,
     });
   },
   onLoad() {
@@ -412,7 +420,6 @@ Page({
     }, 250);
   },
   onShow() {
-    console.log('onShow');
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({
         selected: 0,
@@ -420,42 +427,9 @@ Page({
         toPageTop: this.scrollToTop,
       });
     }
-    // // 头部轮播图事件
-    // this.headSwiperTimer = setInterval(() => {
-    //   const headSwiperList = [...this.data.headSwiperList]
-    //   var midClassName = headSwiperList.shift();
-    //   headSwiperList.push(midClassName)
-    //   this.setData({
-    //     headSwiperList
-    //   })
-    // }, 5000)
-
-    // // 倒计时
-    // const endTime = new Date().getTime() + 21216923
-    // this.timeCountDownTimer = setInterval(() => {
-    //   const diffTime = endTime - new Date().getTime()
-    //   if (diffTime > 0) {
-    //     const dataObj = formatTime(diffTime)
-    //     this.setData({
-    //       timeCountDownObj: {
-    //         Day: dataObj.Day,
-    //         Hour: dataObj.Hour,
-    //         Minute: dataObj.Minute,
-    //         Second: dataObj.Second,
-    //       }
-    //     })
-    //   } else {
-    //     clearInterval(this.timeCountDownTimer)
-    //   }
-    // }, 250)
   },
-  onHide() {
-    // console.log('onHide');
-    // clearInterval(this.headSwiperTimer)
-    // clearInterval(this.timeCountDownTimer)
-  },
+  onHide() {},
   onUnload() {
-    console.log('onUnload');
     clearInterval(this.headSwiperTimer);
     clearInterval(this.timeCountDownTimer);
   },

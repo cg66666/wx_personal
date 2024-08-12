@@ -1,0 +1,5 @@
+<!--pages/detail.wxml-->
+<view>
+  <navigation-bar background="white" showBack="{{true}}" backUrl="{{backUrl}}" isSlot="{{false}}"></navigation-bar>
+  <view>详情页-{{searchVal}}</view>
+</view>
