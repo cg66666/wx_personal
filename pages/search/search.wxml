@@ -25,7 +25,14 @@
     </view>
   </view>
   <scroll-view wx:else class="searchTips" scroll-y>
-    <view class="item" wx:for="{{searchTipsList}}" data-val="{{item}}" wx:key="index" bind:tap="toDetail">
+    <view
+      class="item"
+      wx:for="{{searchTipsList}}"
+      data-val="{{item}}"
+      wx:key="index"
+      data-inSearch="{{true}}"
+      bind:tap="toDetail"
+    >
       <view class="iconfont icon-search_2 icon" />
       <view class="text">{{item}}</view>
     </view>

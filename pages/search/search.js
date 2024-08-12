@@ -70,8 +70,12 @@ Page({
     }
   },
   // 搜索
-  toSearch() {
+  toSearch(val) {
     let { inputVal } = this.data;
+    // 特殊情况，用于搜索框进行搜索的场景
+    if (typeof val === 'string') {
+      inputVal = val;
+    }
     const { defaultValue } = this.data;
     const searchValList = wx.getStorageSync('searchValList') || [];
     if (!inputVal.trim()) inputVal = defaultValue;
@@ -108,16 +112,23 @@ Page({
   }, 500),
   // 前往详情页
   toDetail(e) {
-    wx.navigateTo({
-      url: `/pages/detail/detail?searchVal=${e.currentTarget.dataset.val}`,
-    });
+    const { insearch, val } = e.currentTarget.dataset;
+    // console.log('dataset', e.currentTarget.dataset, e.currentTarget.dataset.inSearch);
     this.setData({
-      inputVal: e.currentTarget.dataset.val,
-      showClearBtn: true,
+      inputVal: insearch ? val : '',
+      showClearBtn: insearch,
     });
-    this.toSearch();
-    this.searchTips();
+    this.toSearch(val);
+    if (insearch) {
+      this.searchTips();
+    }
+    // } else {
+    //   wx.navigateTo({
+    //     url: `/pages/detail/detail?searchVal=${val}`,
+    //   });
+    // }
   },
+  // 回显历史搜索记录
   onLoad() {
     const searchValList = wx.getStorageSync('searchValList') || [];
     this.setData({
