@@ -1,6 +1,8 @@
 // components/lazy-image/lazy-image.js
+// extendClass、src必传
 Component({
   properties: {
+    extendClass: String,
     src: String,
   },
   data: {
@@ -19,10 +21,10 @@ Component({
       observeAll: true,
     });
     this.observer.relativeToViewport({
-      bottom: -100,
+      bottom: -150,
     });
-    this.observer.observe('.image', (res) => {
-      console.log('res', res);
+    this.observer.observe(`.${this.properties.extendClass}`, (res) => {
+      // console.log('res', res);
       if (res.intersectionRatio > 0) {
         this.setData({
           showImage: true,

@@ -37,6 +37,10 @@ Component({
     showBack: {
       type: Boolean,
     },
+    // 返回的地址，不传默认返回上一级路由
+    // backUrl: {
+    //   type: String
+    // }
   },
   /**
    * 组件的初始数据
@@ -49,12 +53,13 @@ Component({
       // console.log('看下此时的app222', app);
       this.setData({
         ios: !app.globalData.isAndroid,
-        titleMarginLeft: `margin-left: ${app.globalData.contentMarginRight}px`,
+        titleMarginLeft: `margin-left: ${app.globalData.contentMarginRight}px;`,
         innerPaddingRight: `padding-right: ${app.globalData.contentMarginRight}px`,
         safeAreaTop:
           app.globalData.isDevtools || app.globalData.isAndroid
             ? `height: calc(var(--height) + ${app.globalData.marginTop}px); padding-top: ${app.globalData.marginTop}px`
             : ``,
+        // titleStyle: `margin-top: ${app.globalData.marginTop}px; margin:0 ${app.globalData.contentMarginRight}px; line-height`
       });
 
       // const rect = wx.getMenuButtonBoundingClientRect();
@@ -90,7 +95,19 @@ Component({
       });
     },
     backPage() {
-      // console.log('返回！');
+      // console.log(111, this.properties);
+      // const {
+      //   backUrl
+      // } = this.properties
+      // if (backUrl) {
+      //   wx.redirectTo({
+      //     url: backUrl,
+      //   })
+      // } else {
+      //   wx.navigateBack({
+      //     delta: 1,
+      //   });
+      // }
       wx.navigateBack({
         delta: 1,
       });

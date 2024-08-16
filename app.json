@@ -3,8 +3,10 @@
     "pages/index/index",
     "pages/index2/index",
     "pages/index3/index",
-    "pages/index4/index",
-    "pages/search/search"
+    "pages/person/person",
+    "pages/search/search",
+    "pages/detail/detail",
+    "pages/service/service"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -26,7 +28,7 @@
         "text": "省钱"
       },
       {
-        "pagePath": "pages/index4/index",
+        "pagePath": "pages/person/person",
         "text": "我的"
       }
     ]

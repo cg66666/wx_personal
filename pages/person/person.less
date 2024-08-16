@@ -1,0 +1,100 @@
+.personal_page {
+  height: calc(100vh - @tabberHeight);
+  display: flex;
+  flex-direction: column;
+
+  .scroll {
+    flex: 1;
+    overflow-y: hidden;
+
+    .yellowBack {
+      background: #ffda1a;
+      overflow: hidden;
+
+      .userInfo {
+        display: flex;
+        margin: 60rpx 30rpx 0;
+
+        .personal_icon {
+          font-size: 130rpx;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          border-radius: 50%;
+        }
+
+        .right {
+          margin-left: 30rpx;
+          display: flex;
+          align-items: center;
+
+          .name {
+            font-size: 36.5rpx;
+            font-weight: bold;
+          }
+
+          .setting {
+            display: flex;
+            font-size: 22rpx;
+            font-weight: 100;
+            margin-top: 13rpx;
+
+            view {
+              background-color: #f1d443;
+              padding: 12rpx 16rpx;
+              border-radius: 30rpx;
+              margin-right: 20rpx;
+            }
+          }
+        }
+      }
+
+      .functionList {
+        display: flex;
+        margin: 45rpx 45rpx 80rpx;
+        font-size: 26rpx;
+        justify-content: space-between;
+
+        & > view {
+          text-align: center;
+          width: 20%;
+          position: relative;
+        }
+
+        .num {
+          position: absolute;
+          left: 85rpx;
+          top: -15rpx;
+          background: red;
+          border-radius: 50%;
+          width: 30rpx;
+          height: 30rpx;
+          color: white;
+          line-height: 30rpx;
+        }
+
+        .icon {
+          font-size: 55rpx;
+          margin-bottom: 10rpx;
+        }
+      }
+    }
+
+    .bottomBack {
+      background: #f8f8f8;
+      // min-height: 2000rpx;
+
+      .whiteCard {
+        position: relative;
+        top: -55rpx;
+        width: 94%;
+        border-radius: 20rpx;
+        margin: 0 auto 25rpx;
+        background: white;
+        height: 300rpx;
+      }
+    }
+
+    // .whiteCard{
+    //   border-radius: 20rpx;
+    // }
+  }
+}
