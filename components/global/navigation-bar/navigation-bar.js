@@ -53,12 +53,13 @@ Component({
       // console.log('看下此时的app222', app);
       this.setData({
         ios: !app.globalData.isAndroid,
-        titleMarginLeft: `margin-left: ${app.globalData.contentMarginRight}px`,
+        titleMarginLeft: `margin-left: ${app.globalData.contentMarginRight}px;`,
         innerPaddingRight: `padding-right: ${app.globalData.contentMarginRight}px`,
         safeAreaTop:
           app.globalData.isDevtools || app.globalData.isAndroid
             ? `height: calc(var(--height) + ${app.globalData.marginTop}px); padding-top: ${app.globalData.marginTop}px`
             : ``,
+        // titleStyle: `margin-top: ${app.globalData.marginTop}px; margin:0 ${app.globalData.contentMarginRight}px; line-height`
       });
 
       // const rect = wx.getMenuButtonBoundingClientRect();

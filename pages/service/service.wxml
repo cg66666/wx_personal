@@ -1,0 +1,70 @@
+<!--pages/service/service.wxml-->
+<view class="service_page" style="{{outlineHeight}}">
+  <navigation-bar background="white" title="服务门户" showBack="{{true}}" />
+  <view class="service_content">
+    <view class="show_content">
+      <view class="show_head">
+        <view class="iconfont icon-a-meituanwaimai1 icon" />
+        <view>
+          <view>美团客服</view>
+          <view style="font-weight: 100; font-size: 28rpx; margin-top: 5rpx">提供专业服务</view>
+        </view>
+        <view class="right">
+          <view class="iconfont icon-youzhifuwujinduanpai" style="font-size: 40rpx" />
+          <view>服务进度</view>
+        </view>
+      </view>
+      <scroll-view
+        class="show_service"
+        scroll-y
+        scroll-with-animation
+        show-scrollbar="{{false}}"
+        enhanced="{{true}}"
+        scroll-into-view="{{scrollId}}"
+      >
+        <view class="midContent">
+          <view>Hi，团团很高兴为您服务</view>
+        </view>
+        <block wx:for="{{chatHistory}}" wx:key="index">
+          <view class="{{'chatItem ' + (item.type === 'left' ? 'leftContent' : 'rightContent')}}">
+            <view>{{item.message}}</view>
+          </view>
+        </block>
+        <!-- <view class="rightContent chatItem">
+          <view>这是右侧内容</view>
+        </view>
+        <view class="leftContent chatItem">
+          <view>这是左侧内容</view>
+        </view> -->
+        <!-- 空隙部分 -->
+        <view class="emptyContent" id="bottomContent" />
+      </scroll-view>
+    </view>
+    <view class="inputContainer">
+      <view class="endService" bind:tap="back">
+        <view class="iconfont icon-jieshufuwu" style="font-size: 43rpx" />
+        结束服务
+      </view>
+      <view class="bottomContent">
+        <view class="iconfont icon-luyin record icon"></view>
+        <input
+          class="input"
+          type="text"
+          placeholder="请简单描述您的问题"
+          adjust-position="{{false}}"
+          bindfocus="inputFocus"
+          bindblur="inputBlur"
+          bindinput="inputHandler"
+          value="{{inputVal}}"
+        />
+        <view class="iconfont icon-biaoqing-xue emoji icon" bind:tap="toShowEmoji"></view>
+        <view wx:if="{{!showSendBtn}}" class="iconfont icon-jiahao add icon" bind:tap="toShowAdd"></view>
+        <button wx:else class="sendBtn" bind:tap="sendMessage">发送</button>
+      </view>
+    </view>
+    <view class="emojiContent" wx:if="{{showEmoji}}">
+      <text wx:for="{{emojiList}}" wx:key="index" data-val="{{item}}" bind:tap="addEmoji">{{item}}</text>
+    </view>
+    <view class="addContent" wx:if="{{showAdd}}">额外内容</view>
+  </view>
+</view>

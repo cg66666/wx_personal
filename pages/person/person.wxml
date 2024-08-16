@@ -1,0 +1,46 @@
+<view class="personal_page">
+  <navigation-bar background="#ffe74d" title="美团外卖" />
+  <scroll-view class="scroll" scroll-y>
+    <view class="yellowBack">
+      <view class="userInfo">
+        <view class="iconfont icon-a-meituanwaimai1 personal_icon" />
+        <view class="right">
+          <view>
+            <view class="name">DWT734324535</view>
+            <view class="setting">
+              <view>账户设置</view>
+              <view>支付设置</view>
+              <view>实名待完善</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="functionList">
+        <view>
+          <view class="iconfont icon-shoucang icon" />
+          <view>收藏</view>
+        </view>
+        <view>
+          <view class="iconfont icon-weixin icon" />
+          <view>关注公众号</view>
+        </view>
+        <view bind:tap="toService">
+          <view class="iconfont icon-kefu icon" />
+          <view>客服</view>
+          <view class="num">3</view>
+        </view>
+        <view>
+          <view class="iconfont icon-hongbaokaquan icon" />
+          <view>红包卡券</view>
+        </view>
+      </view>
+    </view>
+    <view class="bottomBack">
+      <view class="whiteCard"></view>
+      <view class="whiteCard"></view>
+      <view class="whiteCard"></view>
+      <view class="whiteCard"></view>
+      <view class="whiteCard"></view>
+    </view>
+  </scroll-view>
+</view>

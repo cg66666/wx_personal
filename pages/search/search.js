@@ -43,11 +43,6 @@ Page({
       '一屋之煮麻辣烫',
     ],
   },
-  observers: {
-    inputVal: function (val) {
-      console.log('这是监听的内容', val);
-    },
-  },
   // 清空输入框
   clearInputVal() {
     this.setData({

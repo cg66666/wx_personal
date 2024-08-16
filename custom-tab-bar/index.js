@@ -18,7 +18,7 @@ const demo = [
     text: '省钱',
   },
   {
-    pagePath: '/pages/index4/index',
+    pagePath: '/pages/person/person',
     iconPath: 'icon-wode2',
     selectedIconPath: 'icon-wode1',
     text: '我的',
@@ -76,7 +76,7 @@ Component({
     switchTab(e) {
       const data = e.currentTarget.dataset;
       const url = data.path;
-      console.log('url', url);
+      // console.log('url', url);
       wx.switchTab({
         url,
       });
