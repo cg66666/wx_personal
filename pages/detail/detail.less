@@ -1,1 +1,45 @@
 /* pages/detail.wxss */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    background: #f4f4f4;
+    padding-bottom: 30rpx;
+    flex: 1;
+    overflow-y: hidden;
+
+    .content-image {
+      width: 100%;
+    }
+
+    .detail {
+      margin: auto;
+      position: relative;
+      // top: -100rpx;
+      width: 90%;
+      // height: 2000rpx;
+      // background: #ff4235;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      font-size: 25rpx;
+
+      .title {
+        font-size: 30rpx;
+        font-weight: bold;
+        margin: 20rpx 0;
+      }
+
+      .white-card {
+        padding: 20rpx;
+        background-color: white;
+        border-radius: 20rpx;
+
+        & > view {
+          margin: 20rpx 0;
+        }
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@
       </view>
     </view>
   </navigation-bar>
-  <view wx:if="{{!showSearchTips}}" class="search-page-content">
+  <view wx:if="{{!showSearchTips}}" class="{{ 'search-page-content ' }}">
     <view class="historyContent" wx:if="{{searchValList.length}}">
       <view class="iconfont icon-shanchu deleteIcon" bind:tap="clearHistoryList" />
       <view class="title">历史搜索</view>
@@ -24,7 +24,7 @@
       </view>
     </view>
   </view>
-  <scroll-view wx:else class="searchTips" scroll-y>
+  <scroll-view wx:else class="{{ 'searchTips ' }}" scroll-y>
     <view
       class="item"
       wx:for="{{searchTipsList}}"

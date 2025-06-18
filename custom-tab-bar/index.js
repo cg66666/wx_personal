@@ -1,3 +1,4 @@
+const app = getApp();
 const demo = [
   {
     pagePath: '/pages/index/index',
@@ -6,19 +7,19 @@ const demo = [
     text: '首页',
   },
   {
-    pagePath: '/pages/index2/index',
+    pagePath: '/pages/category/category',
     iconPath: 'icon-fenlei1',
     selectedIconPath: 'icon-fenlei',
     text: '分类',
   },
   {
-    pagePath: '/pages/index3/index',
+    pagePath: '/pages/saveMoney/saveMoney',
     iconPath: 'icon-hongbao',
     selectedIconPath: 'icon-hongbao1',
     text: '省钱',
   },
   {
-    pagePath: '/pages/index4/index',
+    pagePath: '/pages/person/person',
     iconPath: 'icon-wode2',
     selectedIconPath: 'icon-wode1',
     text: '我的',
@@ -52,9 +53,12 @@ Component({
   // created() {
   //   console.log('created', this.data.toPageTop);
   // },
-  // attached() {
-  //   console.log('toPageTop', this.data.toPageTop);
-  // },
+  attached() {
+    this.setData({
+      clsDef: app.globalData.clsDef,
+      ggsf: Date.now(),
+    });
+  },
   // ready() {
   //   console.log('ready', this.data.toPageTop);
   // },
@@ -76,7 +80,7 @@ Component({
     switchTab(e) {
       const data = e.currentTarget.dataset;
       const url = data.path;
-      console.log('url', url);
+      console.log('url', url, e.currentTarget, data);
       wx.switchTab({
         url,
       });

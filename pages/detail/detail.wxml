@@ -1,5 +1,41 @@
 <!--pages/detail.wxml-->
-<view>
-  <navigation-bar background="white" showBack="{{true}}" backUrl="{{backUrl}}" isSlot="{{false}}"></navigation-bar>
-  <view>详情页-{{searchVal}}</view>
+<view class="container">
+  <navigation-bar
+    background="white"
+    showBack="{{true}}"
+    backUrl="{{backUrl}}"
+    isSlot="{{false}}"
+    title="团购详情"
+  ></navigation-bar>
+  <scroll-view class="content" scroll-y scroll-with-animation show-scrollbar="{{false}}" enhanced="{{true}}">
+    <image src="http://www.cgcg666.cn:8888/wxfood1.jpg" class="content-image" />
+    <!-- 详情页-{{searchVal}} -->
+    <view class="detail">
+      <view class="title">团购详情</view>
+      <view class="white-card">
+        <view>{{searchVal}}</view>
+        <view>限制：限时秒杀每人限购1张；商品每人每日限购2张</view>
+        <view>须知：周一至周日可用10：00-22：00·包间不可用</view>
+        <view>保障：随时退·过期自动退</view>
+      </view>
+      <view class="title">购买须知</view>
+      <view class="white-card">
+        <view>有效期：2025.4.27至2025.5.2</view>
+        <view>使用时间：10：00-22：00</view>
+        <view>使用规则</view>
+        <view>不可使用包间</view>
+        <view>本单发票由商家提供，详情请咨询商家</view>
+        <view>堂食餐前外带均可</view>
+        <view>
+          全国菜单价有40个价格差异，部分地区价格12元，部分 区域15元。总部统一上单按照菜单最高价值算。不接受
+          的消费者可以酌情购买；
+        </view>
+        <view>不可用日期为：周六周日；</view>
+        <view>团购用户不可同时享受商家其他优惠</view>
+        <view>如部分菜品因时令或售罄等其它不可抗因素无法提供， 请联系商家协商处理，感谢您的理解</view>
+        <view>每人每天最多购买2张美团券</view>
+        <view>无需预约，消费高峰期可能需要等位</view>
+      </view>
+    </view>
+  </scroll-view>
 </view>

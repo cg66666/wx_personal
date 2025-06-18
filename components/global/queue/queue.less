@@ -1,0 +1,113 @@
+/* components/global/queue/queue.wxss */
+.queuePage {
+  --weui-FG-0: rgba(0, 0, 0, 0.9);
+  --height: 44px;
+  --left: 16px;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #f5f5dc;
+  box-sizing: border-box;
+
+  .head {
+    height: var(--height);
+    text-align: center;
+    font-size: 35rpx;
+    line-height: var(--height);
+    font-weight: bold;
+  }
+
+  image {
+    display: block;
+    margin: 0 auto 20rpx;
+    width: 93%;
+    border-radius: 10rpx;
+    height: 200rpx;
+  }
+
+  .centerText {
+    font-weight: bold;
+    // margin: 20rpx;
+    text-align: center;
+    font-size: 40rpx;
+    color: #fe7929;
+    // color: black;
+  }
+
+  .parallelLine {
+    width: 38%;
+    height: 4rpx;
+    margin: 25rpx auto 45rpx;
+    background: #ffd700;
+  }
+
+  .circle {
+    display: block;
+    margin: 10rpx auto;
+    width: 400rpx;
+    height: 400rpx;
+    border-radius: 50%;
+    background-image: radial-gradient(ellipse at center, #ff8000, #fddc99);
+    line-height: 400rpx;
+    text-align: center;
+    font-size: 50rpx;
+    font-weight: bold;
+    position: relative;
+    z-index: 999;
+  }
+
+  .text2 {
+    margin: 30rpx 0;
+    text-align: center;
+    // font-weight: bold;
+    font-size: 38rpx;
+    color: #fe7929;
+  }
+
+  .typeList {
+    margin: auto;
+    justify-content: space-between;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-evenly;
+
+    .borderText {
+      margin: 10rpx 30rpx;
+      border-radius: 8rpx;
+      border: 1rpx solid #bad296;
+      padding: 10rpx;
+      min-width: 100rpx;
+      text-align: center;
+    }
+
+    .okok {
+      background-color: orange;
+    }
+  }
+
+  .bottomText {
+    font-size: 40rpx;
+    text-align: center;
+    margin-top: 40rpx;
+
+    text {
+      font-size: 50rpx;
+      color: red;
+      margin: 0 10rpx;
+    }
+  }
+}
+
+.queuePage .android {
+  --height: 48px;
+}
+
+.laksa {
+  font-size: inherit;
+  background: inherit;
+  // display: none;
+  // display: block;
+  display: none;
+}

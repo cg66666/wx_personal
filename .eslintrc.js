@@ -28,6 +28,7 @@ module.exports = {
     // 'camelcase': ['error', { ignoreDestructuring: true }],
     'camelcase': 'off',
     'class-name-casing': 'off',
+    
     'no-console': ['warn', { allow: ['warn', 'error'] }],
     'no-debugger': 'error',
     'no-unused-expressions': ['error', { allowShortCircuit: true, allowTernary: true }],
@@ -58,7 +59,7 @@ module.exports = {
     'array-callback-return': 'warn',
     'prefer-template': 'error',
     'no-useless-escape': 'error',
-    'wrap-iife': ['error', 'outside'],
+    'wrap-iife': 'off',
     'space-before-function-paren': [
       'warn',
       {

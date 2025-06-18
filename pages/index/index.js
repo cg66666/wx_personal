@@ -1,23 +1,23 @@
 /*
  * @Description: file content
- * @Author: 朱晨光
+ * @Author: cg
  * @Date: 2024-07-16 23:22:48
- * @LastEditors: 朱晨光
+ * @LastEditors: cg
  * @LastEditTime: 2024-08-09 15:48:44
  */
 import { formatTime } from '../../utils/index';
 const app = getApp();
 const addLeftList = [
   {
-    img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-    title: '全聚德 鸭汤醋椒鱼',
+    img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+    title: '散天宇 鸭汤醋椒鱼',
     subTitle: '4.2分 | 月售600+',
     discountPrice: '999',
     originPrice: '1299',
     priceDesc: '30天惊爆价',
   },
   {
-    img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
+    img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
     title: '杏花楼 香葱生焗鲜鲍鱼',
     subTitle: '4.2分 | 月售600+',
     discountPrice: '999',
@@ -25,16 +25,16 @@ const addLeftList = [
     priceDesc: '30天惊爆价',
   },
   {
-    img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-    title: '广州酒家 一品天香广州文昌鸡',
+    img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+    title: '多克酒店 一品天香广州文昌鸡',
     subTitle: '4.2分 | 月售600+',
     discountPrice: '999',
     originPrice: '1299',
     priceDesc: '30天惊爆价',
   },
   {
-    img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-    title: '小南国 老上海黄鱼面',
+    img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+    title: '北亚地 老上海黄鱼面',
     subTitle: '4.2分 | 月售600+',
     discountPrice: '999',
     originPrice: '1299',
@@ -43,32 +43,32 @@ const addLeftList = [
 ];
 const addRightList = [
   {
-    img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-    title: '全聚德 鸭汤醋椒鱼',
+    img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+    title: '散天宇 鸭汤醋椒鱼',
     subTitle: '4.2分 | 月售600+',
     discountPrice: '999',
     originPrice: '1299',
     priceDesc: '30天惊爆价',
   },
   {
-    img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-    title: '杏花楼 香葱生焗鲜鲍鱼',
+    img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+    title: '比亚楼 香葱生焗鲜鲍鱼',
     subTitle: '4.2分 | 月售600+',
     discountPrice: '999',
     originPrice: '1299',
     priceDesc: '30天惊爆价',
   },
   {
-    img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-    title: '广州酒家 一品天香广州文昌鸡',
+    img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+    title: '卧室酒家 一品天香广州文昌鸡',
     subTitle: '4.2分 | 月售600+',
     discountPrice: '999',
     originPrice: '1299',
     priceDesc: '30天惊爆价',
   },
   {
-    img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-    title: '小南国 老上海黄鱼面',
+    img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+    title: '开了去 老上海黄鱼面',
     subTitle: '4.2分 | 月售600+',
     discountPrice: '999',
     originPrice: '1299',
@@ -77,6 +77,7 @@ const addRightList = [
 ];
 Page({
   data: {
+    normalContentHeight: 0,
     topNum: 0,
     titleLeft: 0,
     headSwiperList: ['firstView', 'secondView', 'thirdShowView', 'forthView', 'fifthView'],
@@ -267,15 +268,15 @@ Page({
     isLoading: false,
     leftList: [
       {
-        img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-        title: '全聚德 鸭汤醋椒鱼',
+        img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+        title: '散天宇 鸭汤醋椒鱼',
         subTitle: '4.2分 | 月售600+',
         discountPrice: '999',
         originPrice: '1299',
         priceDesc: '30天惊爆价',
       },
       {
-        img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
+        img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
         title: '杏花楼 香葱生焗鲜鲍鱼',
         subTitle: '4.2分 | 月售600+',
         discountPrice: '999',
@@ -283,16 +284,16 @@ Page({
         priceDesc: '30天惊爆价',
       },
       {
-        img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-        title: '广州酒家 一品天香广州文昌鸡',
+        img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+        title: '多克酒店 一品天香广州文昌鸡',
         subTitle: '4.2分 | 月售600+',
         discountPrice: '999',
         originPrice: '1299',
         priceDesc: '30天惊爆价',
       },
       {
-        img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-        title: '小南国 老上海黄鱼面',
+        img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+        title: '北亚地 老上海黄鱼面',
         subTitle: '4.2分 | 月售600+',
         discountPrice: '999',
         originPrice: '1299',
@@ -301,32 +302,32 @@ Page({
     ],
     rightList: [
       {
-        img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-        title: '知味观 叫化童鸡',
+        img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+        title: '肯少观 叫化童鸡',
         subTitle: '4.2分 | 月售600+',
         discountPrice: '999',
         originPrice: '1299',
         priceDesc: '30天惊爆价',
       },
       {
-        img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-        title: '西贝莜面 村蒙古奶酪饼',
+        img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+        title: 'islk面 村蒙古奶酪饼',
         subTitle: '4.2分 | 月售600+',
         discountPrice: '999',
         originPrice: '1299',
         priceDesc: '30天惊爆价',
       },
       {
-        img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-        title: '小南国 清炒野生河虾仁',
+        img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+        title: '北亚地 清炒野生河虾仁',
         subTitle: '4.2分 | 月售600+',
         discountPrice: '999',
         originPrice: '1299',
         priceDesc: '30天惊爆价',
       },
       {
-        img: 'https://img.zcool.cn/community/01be4760fd1f3711013f47206e82de.jpg@1280w_1l_2o_100sh.jpg',
-        title: '必胜客 超级至尊披萨',
+        img: 'http://www.cgcg666.cn:8888/wxfood1.jpg',
+        title: '框奇亚 超级至尊披萨',
         subTitle: '4.2分 | 月售600+',
         discountPrice: '999',
         originPrice: '1299',
@@ -389,6 +390,7 @@ Page({
   onLoad() {
     this.setData({
       titleLeft: app.globalData.rectRight,
+      normalContentHeight: app.globalData.normalContentHeight,
     });
     // 头部轮播图事件
     this.headSwiperTimer = setInterval(() => {

@@ -1,13 +1,13 @@
 /*
  * @Description: file content
- * @Author: 朱晨光
+ * @Author: cg
  * @Date: 2024-08-09 15:48:32
- * @LastEditors: 朱晨光
+ * @LastEditors: cg
  * @LastEditTime: 2024-08-09 15:50:10
  */
 // pages/search/search.js
 import { debounce } from '../../utils/index';
-
+const app = getApp();
 Page({
   /**
    * 页面的初始数据
@@ -42,11 +42,6 @@ Page({
       '农小锅',
       '一屋之煮麻辣烫',
     ],
-  },
-  observers: {
-    inputVal: function (val) {
-      console.log('这是监听的内容', val);
-    },
   },
   // 清空输入框
   clearInputVal() {
@@ -133,6 +128,8 @@ Page({
     const searchValList = wx.getStorageSync('searchValList') || [];
     this.setData({
       searchValList,
+      clsDef: app.globalData.clsDef,
+      ggsf: Date.now(),
     });
   },
 });

@@ -29,13 +29,22 @@
   }
 
   .barTitle {
-    position: absolute;
     width: 100%;
     font-weight: bold;
     font-size: 17px;
-    left: 0;
-    top: 0;
     height: 100%;
+    // text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text {
+      text-align: center;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 
   .back {

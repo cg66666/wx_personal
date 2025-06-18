@@ -1,0 +1,23 @@
+<!--components/global/queue/queue.wxml-->
+
+<view class="{{'queuePage ' + (ios ? 'ios ' : 'android ') }}" style="{{pageMarginTop}}">
+  <view class="head">智能餐饮排队系统</view>
+  <image src="../../../assets/demo.jpg" mode="aspectFill" />
+  <view class="centerText">一键排队</view>
+  <view class="parallelLine"></view>
+  <view class="circle" bind:tap="goQueue">
+    <view>{{hours+':'+ minutes +':' +seconds}}</view>
+  </view>
+  <view class="text2">请选择您需要的座位</view>
+  <view class="typeList">
+    <text
+      wx:for="{{typeList}}"
+      wx:key="index"
+      class="borderText {{selected === item ? 'okok' : ''}}"
+      bind:tap="setNum"
+      data-val="{{item}}"
+      >{{item}}人位</text
+    >
+  </view>
+  <view class="bottomText"> 您的编号：<text>{{ID}}</text>，当前排在第<text>{{num}}</text>位 </view>
+</view>

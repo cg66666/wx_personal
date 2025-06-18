@@ -1,0 +1,50 @@
+<view class="personal_page">
+  <navigation-bar background="#ffe74d" title="CGCG外卖" />
+  <scroll-view class="{{ 'scroll ' }}" scroll-y>
+    <view class="yellowBack">
+      <view class="userInfo">
+        <view class="iconfont icon-wode2 personal_icon" />
+        <!-- <view wx:if="{{!avatarUrl}}" class="iconfont icon-a-meituanwaimai1 personal_icon" />
+        <image class="personal_image" wx:else src="{{avatarUrl}}" mode="" /> -->
+        <view class="right">
+          <view>
+            <!-- <view class="name">{{userName ? userName : '未登录 >'}}</view> -->
+            <button class="name" bindtap="getUserInfo">{{userName ? userName : '请点击登录'}}</button>
+            <!-- <button  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">{{userName ? userName : '未登录 >'}}</button> -->
+            <view class="setting">
+              <view bind:tap="set1">账户设置</view>
+              <view bind:tap="set2">支付设置</view>
+              <view bind:tap="set3">实名待完善</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="functionList">
+        <view bind:tap="set4">
+          <view class="iconfont icon-shoucang icon" />
+          <view>收藏</view>
+        </view>
+        <view bind:tap="set5">
+          <view class="iconfont icon-weixin icon" />
+          <view>关注公众号</view>
+        </view>
+        <view bind:tap="toService">
+          <view class="iconfont icon-kefu icon" />
+          <view>客服</view>
+          <view class="num">3</view>
+        </view>
+        <view bind:tap="redBag">
+          <view class="iconfont icon-hongbaokaquan icon" />
+          <view>红包卡券</view>
+        </view>
+      </view>
+    </view>
+    <view class="bottomBack">
+      <view class="whiteCard"></view>
+      <view class="whiteCard"></view>
+      <view class="whiteCard"></view>
+      <view class="whiteCard"></view>
+      <view class="whiteCard"></view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,9 +1,9 @@
 <!--miniprogram/custom-tab-bar/index.wxml-->
-<view class="tab-bar">
+<view class="{{'tab-bar '}}">
   <!-- <view class="tab-bar-border"></view> -->
   <view wx:if="{{inIndexPage}}" class="inIndexPageContainer" bind:tap="toPageTop">
     <view class="inIndexPage" />
-    <view class="{{'icon-text ' + (isScroll ? 'hidden-text' : '')}}">美团</view>
+    <view class="{{'icon-text ' + (isScroll ? 'hidden-text' : '')}}">CGCG</view>
     <view class="{{'iconfont icon-up2 iconHome ' + (isScroll ? 'show-icon' : '')}}" />
   </view>
   <block wx:for="{{list}}" wx:key="index">

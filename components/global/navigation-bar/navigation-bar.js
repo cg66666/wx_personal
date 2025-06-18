@@ -15,6 +15,10 @@ Component({
       type: String,
       value: '',
     },
+    color: {
+      type: String,
+      value: 'black',
+    },
     background: {
       type: String,
       value: '',
@@ -48,35 +52,39 @@ Component({
   data: {
     displayStyle: '',
   },
-  lifetimes: {
-    attached() {
-      // console.log('看下此时的app222', app);
-      this.setData({
+  // lifetimes: {
+  attached() {
+    const that = this;
+    app.promiseResult.then(() => {
+      // console.log(111, app.globalData);
+      that.setData({
         ios: !app.globalData.isAndroid,
-        titleMarginLeft: `margin-left: ${app.globalData.contentMarginRight}px`,
+        titleMarginLeft: `margin-left: ${app.globalData.contentMarginRight}px;`,
         innerPaddingRight: `padding-right: ${app.globalData.contentMarginRight}px`,
         safeAreaTop:
           app.globalData.isDevtools || app.globalData.isAndroid
             ? `height: calc(var(--height) + ${app.globalData.marginTop}px); padding-top: ${app.globalData.marginTop}px`
             : ``,
+        // titleStyle: `margin-top: ${app.globalData.marginTop}px; margin:0 ${app.globalData.contentMarginRight}px; line-height`
       });
+    });
 
-      // const rect = wx.getMenuButtonBoundingClientRect();
-      // wx.getSystemInfo({
-      //   success: (res) => {
-      //     const isAndroid = res.platform === 'android';
-      //     const isDevtools = res.platform === 'devtools';
-      //     this.setData({
-      //       ios: !isAndroid,
-      //       titleMarginLeft: `margin-left: ${res.windowWidth - rect.left}px`,
-      //       innerPaddingRight: `padding-right: ${res.windowWidth - rect.left}px`,
-      //       safeAreaTop: isDevtools || isAndroid ?
-      //         `height: calc(var(--height) + ${res.safeArea.top}px); padding-top: ${res.safeArea.top}px` : ``,
-      //     });
-      //   },
-      // });
-    },
+    // const rect = wx.getMenuButtonBoundingClientRect();
+    // wx.getSystemInfo({
+    //   success: (res) => {
+    //     const isAndroid = res.platform === 'android';
+    //     const isDevtools = res.platform === 'devtools';
+    //     this.setData({
+    //       ios: !isAndroid,
+    //       titleMarginLeft: `margin-left: ${res.windowWidth - rect.left}px`,
+    //       innerPaddingRight: `padding-right: ${res.windowWidth - rect.left}px`,
+    //       safeAreaTop: isDevtools || isAndroid ?
+    //         `height: calc(var(--height) + ${res.safeArea.top}px); padding-top: ${res.safeArea.top}px` : ``,
+    //     });
+    //   },
+    // });
   },
+  // },
   /**
    * 组件的方法列表
    */

@@ -1,0 +1,46 @@
+.container {
+  // height: calc(100vh - 55px - 34px);
+  display: flex;
+  flex-direction: column;
+  background: #f4f4f4;
+
+  .title-scroll {
+    // padding: 25rpx 0;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+
+    text {
+      margin: 25rpx 20rpx;
+      display: inline-block;
+    }
+
+    .slectedItem {
+      font-weight: bolder;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60rpx;
+        border-radius: 10rpx;
+        height: 10rpx;
+        background-color: #ffdd00;
+        bottom: -10rpx;
+      }
+    }
+  }
+
+  .scroll-content {
+    flex: 1;
+    overflow-y: hidden;
+
+    .content2 {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+}

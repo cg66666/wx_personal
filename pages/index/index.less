@@ -1,5 +1,5 @@
 .index-page {
-  height: calc(100vh - @tabberHeight);
+  // height: calc(100vh - @tabberHeight);
   display: flex;
   flex-direction: column;
 
@@ -27,22 +27,19 @@
       background-color: #fff9e6;
       border-radius: 10rpx;
       height: 75%;
-      padding: 13rpx 10rpx 13rpx 60rpx;
       box-sizing: border-box;
-      position: relative;
+      align-items: center;
+      display: flex;
 
       .search-icon {
-        position: absolute;
         font-size: 32rpx;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 18rpx;
+        margin: 0 15rpx 0 18rpx;
       }
 
       .swiperContainer {
-        position: absolute;
-        left: 60rpx;
+        position: relative;
         color: #999999;
+        height: 44rpx;
 
         view {
           transition: 0.8s;
@@ -274,7 +271,8 @@
               font-size: 21.5rpx;
               color: #f9562f;
               padding: 5rpx;
-              width: 86rpx;
+              // width: 90rpx;
+              display: inline-block;
               margin-top: 5rpx;
             }
 

@@ -1,4 +1,5 @@
 // pages/detail.js
+const app = getApp();
 Page({
   /**
    * 页面的初始数据
@@ -14,6 +15,7 @@ Page({
     if (!options.searchVal) return;
     this.setData({
       searchVal: options.searchVal,
+      normalContentHeight: app.globalData.normalContentHeight,
     });
   },
 

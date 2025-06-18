@@ -1,0 +1,36 @@
+<view class="container" style="height: {{normalContentHeight}};">
+  <navigation-bar background="#ff1e3a" color="white" title="省钱" />
+  <scroll-view class="title-scroll" scroll-x scroll-with-animation show-scrollbar="{{true}}">
+    <text
+      wx:for="{{titleList}}"
+      wx:key="id"
+      class="{{item.id == selected ? 'slectedItem' : ''}}"
+      data-id="{{item.id}}"
+      bind:tap="selectedId"
+      >{{item.name}}</text
+    >
+  </scroll-view>
+  <scroll-view
+    class="scroll-content"
+    bindscroll="onScroll"
+    scroll-top="{{topNum}}"
+    scroll-y
+    enable-passive="{{true}}"
+    show-scrollbar="{{true}}"
+  >
+    <view class="content2">
+      <block wx:for="{{titleList[selected - 1].list}}" wx:for-item="item" wx:key="index">
+        <white-card
+          img="{{item.img}}"
+          title="{{item.title}}"
+          subTitle="{{item.subTitle}}"
+          discountPrice="{{item.discountPrice}}"
+          originPrice="{{item.originPrice}}"
+          priceDesc="{{item.priceDesc}}"
+          data-val="{{item.title}}"
+          bind:tap="toDetail"
+        />
+      </block>
+    </view>
+  </scroll-view>
+</view>
