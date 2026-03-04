@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/category/category",
     "pages/saveMoney/saveMoney",
+    "pages/shoppingCart/shoppingCart",
     "pages/person/person",
     "pages/search/search",
     "pages/detail/detail",
@@ -26,6 +27,10 @@
       {
         "pagePath": "pages/saveMoney/saveMoney",
         "text": "省钱"
+      },
+      {
+        "pagePath": "pages/shoppingCart/shoppingCart",
+        "text": "购物车"
       },
       {
         "pagePath": "pages/person/person",

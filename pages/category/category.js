@@ -46,7 +46,7 @@ Page({
           name: '小吃馆',
         },
         {
-          icon_name: 'icon-a-exposure2',
+          icon_name: 'icon-Album',
           name: 'CG专送',
         },
         {
@@ -58,7 +58,7 @@ Page({
           name: '早餐',
         },
         {
-          icon_name: 'icon-turbid',
+          icon_name: 'icon-a-SportShot',
           name: '正餐优选',
         },
         {
@@ -109,7 +109,7 @@ Page({
             name: '小吃馆',
           },
           {
-            icon_name: 'icon-a-exposure2',
+            icon_name: 'icon-Album',
             name: 'CG专送',
           },
           {
@@ -121,7 +121,7 @@ Page({
             name: '早餐',
           },
           {
-            icon_name: 'icon-turbid',
+            icon_name: 'icon-a-SportShot',
             name: '正餐优选',
           },
           {
@@ -175,7 +175,7 @@ Page({
             name: '纸品清洁',
           },
           {
-            icon_name: 'icon-a-exposure2',
+            icon_name: 'icon-Album',
             name: '日用百货',
           },
           {
@@ -193,7 +193,7 @@ Page({
             name: '全部',
           },
           {
-            icon_name: 'icon-turbid',
+            icon_name: 'icon-a-SportShot',
             name: '火锅',
           },
           {
@@ -247,7 +247,7 @@ Page({
             name: '全部',
           },
           {
-            icon_name: 'icon-a-exposure2',
+            icon_name: 'icon-Album',
             name: '猫眼电影',
           },
           {
@@ -259,7 +259,7 @@ Page({
             name: '洗浴汗蒸',
           },
           {
-            icon_name: 'icon-turbid',
+            icon_name: 'icon-a-SportShot',
             name: 'KTV',
           },
           {
@@ -295,7 +295,7 @@ Page({
             name: '游泳',
           },
           {
-            icon_name: 'icon-a-exposure2',
+            icon_name: 'icon-Album',
             name: '网吧电竞',
           },
           {
@@ -313,7 +313,7 @@ Page({
             name: '全部',
           },
           {
-            icon_name: 'icon-turbid',
+            icon_name: 'icon-a-SportShot',
             name: '酒店/住宿',
           },
           {
@@ -373,7 +373,7 @@ Page({
             name: '全部',
           },
           {
-            icon_name: 'icon-a-exposure2',
+            icon_name: 'icon-Album',
             name: '美发',
           },
           {
@@ -385,7 +385,7 @@ Page({
             name: '美容美体',
           },
           {
-            icon_name: 'icon-turbid',
+            icon_name: 'icon-a-SportShot',
             name: '医学美容',
           },
           {
@@ -439,7 +439,7 @@ Page({
             name: '亲子乐园',
           },
           {
-            icon_name: 'icon-a-exposure2',
+            icon_name: 'icon-Album',
             name: '家庭服务',
           },
         ],
@@ -457,7 +457,7 @@ Page({
             name: '借钱',
           },
           {
-            icon_name: 'icon-turbid',
+            icon_name: 'icon-a-SportShot',
             name: '账单',
           },
           {
@@ -499,7 +499,7 @@ Page({
             name: '看小说赚钱',
           },
           {
-            icon_name: 'icon-a-exposure2',
+            icon_name: 'icon-Album',
             name: '全民种红包',
           },
           {
@@ -552,7 +552,7 @@ Page({
             name: '纸品清洁',
           },
           {
-            icon_name: 'icon-a-exposure2',
+            icon_name: 'icon-Album',
             name: '日用百货',
           },
           {
@@ -570,7 +570,7 @@ Page({
             name: '全部',
           },
           {
-            icon_name: 'icon-turbid',
+            icon_name: 'icon-a-SportShot',
             name: '火锅',
           },
           {
@@ -624,7 +624,7 @@ Page({
             name: '全部',
           },
           {
-            icon_name: 'icon-a-exposure2',
+            icon_name: 'icon-Album',
             name: '猫眼电影',
           },
           {
@@ -636,7 +636,7 @@ Page({
             name: '洗浴汗蒸',
           },
           {
-            icon_name: 'icon-turbid',
+            icon_name: 'icon-a-SportShot',
             name: 'KTV',
           },
           {
@@ -672,7 +672,7 @@ Page({
             name: '游泳',
           },
           {
-            icon_name: 'icon-a-exposure2',
+            icon_name: 'icon-Album',
             name: '网吧电竞',
           },
           {
@@ -690,7 +690,7 @@ Page({
             name: '全部',
           },
           {
-            icon_name: 'icon-turbid',
+            icon_name: 'icon-a-SportShot',
             name: '酒店/住宿',
           },
           {
@@ -750,7 +750,7 @@ Page({
             name: '全部',
           },
           {
-            icon_name: 'icon-a-exposure2',
+            icon_name: 'icon-Album',
             name: '美发',
           },
           {
@@ -762,7 +762,7 @@ Page({
             name: '美容美体',
           },
           {
-            icon_name: 'icon-turbid',
+            icon_name: 'icon-a-SportShot',
             name: '医学美容',
           },
           {
@@ -816,7 +816,7 @@ Page({
             name: '亲子乐园',
           },
           {
-            icon_name: 'icon-a-exposure2',
+            icon_name: 'icon-Album',
             name: '家庭服务',
           },
         ],
@@ -834,7 +834,7 @@ Page({
             name: '借钱',
           },
           {
-            icon_name: 'icon-turbid',
+            icon_name: 'icon-a-SportShot',
             name: '账单',
           },
           {
@@ -876,7 +876,7 @@ Page({
             name: '看小说赚钱',
           },
           {
-            icon_name: 'icon-a-exposure2',
+            icon_name: 'icon-Album',
             name: '全民种红包',
           },
           {

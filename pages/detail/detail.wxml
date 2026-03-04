@@ -37,5 +37,23 @@
         <view>无需预约，消费高峰期可能需要等位</view>
       </view>
     </view>
+    <!-- 底部占位 -->
+    <view class="bottom-placeholder"></view>
   </scroll-view>
+
+  <!-- 底部购物车操作栏 -->
+  <view class="bottom-action-bar">
+    <view class="price-info">
+      <view class="current-price"> <text class="unit">￥</text>{{product.price}} </view>
+      <view class="origin-price">￥{{product.originPrice}}</view>
+    </view>
+    <view class="action-btns">
+      <view class="cart-icon-wrapper" bind:tap="goToCart">
+        <text class="iconfont icon-shoppingCart cart-icon"></text>
+        <view class="cart-badge" wx:if="{{cartCount > 0}}">{{cartCount > 99 ? '99+' : cartCount}}</view>
+      </view>
+      <view class="btn-add-cart" bind:tap="addToCart">加入购物车</view>
+      <view class="btn-buy-now" bind:tap="buyNow">立即购买</view>
+    </view>
+  </view>
 </view>

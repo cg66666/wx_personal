@@ -116,7 +116,7 @@ Page({
           label: '骑车',
         },
         {
-          icon_name: 'icon-a-exposure2',
+          icon_name: 'icon-Album',
           label: '看病买药',
         },
         {
@@ -128,7 +128,7 @@ Page({
           label: '特价团',
         },
         {
-          icon_name: 'icon-turbid',
+          icon_name: 'icon-a-SportShot',
           label: '景点/门票',
         },
         {
@@ -178,7 +178,7 @@ Page({
           label: '丽人/美发',
         },
         {
-          icon_name: 'icon-a-exposure2',
+          icon_name: 'icon-Album',
           label: '火车机票',
         },
         {
@@ -190,7 +190,7 @@ Page({
           label: '品质百货',
         },
         {
-          icon_name: 'icon-turbid',
+          icon_name: 'icon-a-SportShot',
           label: '医疗/口腔',
         },
         {
@@ -240,7 +240,7 @@ Page({
           label: '看小说赚钱',
         },
         {
-          icon_name: 'icon-a-exposure2',
+          icon_name: 'icon-Album',
           label: '民宿/公寓',
         },
         {
@@ -252,7 +252,7 @@ Page({
           label: '借钱',
         },
         {
-          icon_name: 'icon-turbid',
+          icon_name: 'icon-a-SportShot',
           label: '全部分类',
         },
       ],

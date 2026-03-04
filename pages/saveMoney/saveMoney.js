@@ -327,7 +327,7 @@ Page({
   },
   selectedId(event) {
     const { id } = event.currentTarget.dataset; // 获取传递的参数
-    console.log('id', id);
+    // console.log('id', id);
     this.setData({
       selected: id,
       topNum: 0,

@@ -19,6 +19,12 @@ const demo = [
     text: '省钱',
   },
   {
+    pagePath: '/pages/shoppingCart/shoppingCart',
+    iconPath: 'icon-shoppingCart',
+    selectedIconPath: 'icon-shoppingCart2',
+    text: '购物车',
+  },
+  {
     pagePath: '/pages/person/person',
     iconPath: 'icon-wode2',
     selectedIconPath: 'icon-wode1',

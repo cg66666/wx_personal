@@ -17,10 +17,7 @@
     .detail {
       margin: auto;
       position: relative;
-      // top: -100rpx;
       width: 90%;
-      // height: 2000rpx;
-      // background: #ff4235;
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       font-size: 25rpx;
@@ -39,6 +36,100 @@
         & > view {
           margin: 20rpx 0;
         }
+      }
+    }
+
+    // 底部占位，防止内容被底部栏遮挡
+    .bottom-placeholder {
+      height: 140rpx;
+    }
+  }
+
+  // 底部购物车操作栏
+  .bottom-action-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120rpx;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20rpx;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.05);
+
+    .price-info {
+      display: flex;
+      align-items: baseline;
+
+      .current-price {
+        color: #f73000;
+        font-size: 40rpx;
+        font-weight: bold;
+
+        .unit {
+          font-size: 26rpx;
+        }
+      }
+
+      .origin-price {
+        font-size: 24rpx;
+        color: #999;
+        text-decoration: line-through;
+        margin-left: 16rpx;
+      }
+    }
+
+    .action-btns {
+      display: flex;
+      align-items: center;
+
+      .cart-icon-wrapper {
+        position: relative;
+        margin-right: 20rpx;
+        padding: 10rpx;
+
+        .cart-icon {
+          font-size: 48rpx;
+          color: #333;
+        }
+
+        .cart-badge {
+          position: absolute;
+          top: 0;
+          right: 0;
+          min-width: 32rpx;
+          height: 32rpx;
+          background: #f73000;
+          border-radius: 16rpx;
+          font-size: 20rpx;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 8rpx;
+        }
+      }
+
+      .btn-add-cart {
+        background: #ffd43b;
+        color: #333;
+        font-size: 28rpx;
+        font-weight: bold;
+        padding: 18rpx 30rpx;
+        border-radius: 40rpx;
+        margin-right: 16rpx;
+      }
+
+      .btn-buy-now {
+        background: #f73000;
+        color: white;
+        font-size: 28rpx;
+        font-weight: bold;
+        padding: 18rpx 30rpx;
+        border-radius: 40rpx;
       }
     }
   }

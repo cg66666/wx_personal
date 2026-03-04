@@ -1,0 +1,95 @@
+<!--pages/shoppingCart.wxml-->
+<view class="container" style="height: {{normalContentHeight}};">
+  <navigation-bar background="white" isSlot="{{false}}" title="购物车"></navigation-bar>
+
+  <!-- 购物车内容区域 -->
+  <scroll-view
+    class="content"
+    style="flex: 1; padding-bottom: 100rpx"
+    scroll-y
+    scroll-with-animation
+    show-scrollbar="{{false}}"
+    enhanced="{{true}}"
+  >
+    <!-- 购物车列表 -->
+    <block wx:if="{{cartItems.length > 0}}">
+      <view class="cart-list">
+        <view class="cart-item" wx:for="{{cartItems}}" wx:key="id">
+          <!-- 选择框 -->
+          <view class="select-box" bind:tap="toggleItemSelect" data-id="{{item.id}}">
+            <view class="{{'checkbox ' + (item.selected ? 'checked' : '')}}">
+              <text wx:if="{{item.selected}}" class="iconfont icon-xuanzhong"></text>
+            </view>
+          </view>
+          <!-- 商品图片 -->
+          <lazy-image src="{{item.img}}" extendClass="item-image" />
+          <!-- 商品信息 -->
+          <view class="item-info">
+            <view class="item-title">{{item.title}}</view>
+            <view class="item-sub-title">{{item.subTitle}}</view>
+            <view class="item-bottom">
+              <view class="item-price"> <text class="unit">￥</text>{{item.price}} </view>
+              <view class="quantity-control">
+                <view class="btn-minus" bind:tap="decreaseQuantity" data-id="{{item.id}}">-</view>
+                <view class="quantity">{{item.quantity}}</view>
+                <view class="btn-plus" bind:tap="increaseQuantity" data-id="{{item.id}}">+</view>
+              </view>
+            </view>
+          </view>
+          <!-- 删除按钮 -->
+          <view class="delete-btn" bind:tap="deleteItem" data-id="{{item.id}}">
+            <text class="iconfont icon-shanchu"></text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!-- 空购物车提示 -->
+    <block wx:else>
+      <view class="empty-cart">
+        <text class="iconfont icon-shoppingCart empty-icon"></text>
+        <view class="empty-text">购物车空空如也~</view>
+        <view class="empty-tip">快去挑选心仪的商品吧</view>
+      </view>
+    </block>
+
+    <!-- 推荐商品 -->
+    <view class="recommend-section">
+      <view class="section-title">猜你喜欢</view>
+      <view class="recommend-list">
+        <view class="recommend-item" wx:for="{{recommendList}}" wx:key="id">
+          <lazy-image src="{{item.img}}" extendClass="recommend-image" />
+          <view class="recommend-info">
+            <view class="recommend-title">{{item.title}}</view>
+            <view class="recommend-sub-title">{{item.subTitle}}</view>
+            <view class="recommend-bottom">
+              <view class="recommend-price">
+                <text class="unit">￥</text>{{item.price}}
+                <text class="origin-price">￥{{item.originPrice}}</text>
+              </view>
+              <view class="add-btn" bind:tap="addToCart" data-item="{{item}}">
+                <text class="iconfont icon-jiahao"></text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 底部结算栏 -->
+  <view class="bottom-bar">
+    <view class="select-all" bind:tap="toggleSelectAll">
+      <view class="{{'checkbox ' + (isAllSelected ? 'checked' : '')}}">
+        <text wx:if="{{isAllSelected}}" class="iconfont icon-xuanzhong"></text>
+      </view>
+      <text class="select-text">全选</text>
+    </view>
+    <view class="total-info">
+      <view class="total-price">
+        合计：<text class="price-value"><text class="unit">￥</text>{{totalPrice}}</text>
+      </view>
+      <view class="checkout-btn" bind:tap="goCheckout">去结算({{selectedCount}})</view>
+    </view>
+  </view>
+</view>
